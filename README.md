@@ -37,13 +37,20 @@ arr[6]; // 索引超出了范围，返回undefined
 + sort-sort()可以对当前Array进行排序，它会直接修改当前Array的元素位置，直接调用时，按照默认顺序排序。会破坏原有数组
 + reverse-将内部元素反转。会破坏原有数组
 + splice-splice()方法是修改Array的“万能方法”，它可以从指定的索引开始删除若干元素，然后再从该位置添加若干元素：
-	>>1. var arr = ['Microsoft', 'Apple', 'Yahoo', 'AOL', 'Excite', 'Oracle'];
+	>* var arr = ['Microsoft', 'Apple', 'Yahoo', 'AOL', 'Excite', 'Oracle'];
 // 从索引2开始删除3个元素,然后再添加两个元素:
-	>>2. arr.splice(2, 3, 'Google', 'Facebook'); // 返回删除的元素 ['Yahoo', 'AOL', 'Excite']
-	>>3. arr; // ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']
+	>* arr.splice(2, 3, 'Google', 'Facebook'); // 返回删除的元素 ['Yahoo', 'AOL', 'Excite']
+	>* arr; // ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']
 // 只删除,不添加:
-	>>4. arr.splice(2, 2); // ['Google', 'Facebook']
-	>>5. arr; // ['Microsoft', 'Apple', 'Oracle']
+	>* arr.splice(2, 2); // ['Google', 'Facebook']
+	>* arr; // ['Microsoft', 'Apple', 'Oracle']
 // 只添加,不删除:
-	>>6. arr.splice(2, 0, 'Google', 'Facebook'); // 返回[],因为没有删除任何元素
-	>>7. arr; // ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']
+	>* arr.splice(2, 0, 'Google', 'Facebook'); // 返回[],因为没有删除任何元素
+	>* arr; // ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']
++ concat-concat()方法把当前的Array和另一个Array连接起来，并返回一个新的Array：
++ join-join()方法是一个非常实用的方法，它把当前Array的每个元素都用指定的字符串连接起来，然后返回连接后的字符串
+>>对象
++ 
++ JavaScript的对象是一种无序的集合数据类型，它由若干键值对组成。
++ delete-删除属性
++ in-检测是否拥有某一属性，可以用in操作符。包括继承的属性
