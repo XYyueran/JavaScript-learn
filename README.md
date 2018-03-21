@@ -9,7 +9,7 @@
 >>### 基本语法
 + 语法与java类似，语句结束添加“;”，但是也不是强制要求添加。浏览器引擎在执行JavaScript代码的时候会自动补上“；”
 + 缩进不是JavaScript语法要求必须的，但缩进有助于我们理解代码的层次
-+ 以"//"开头直到行末的字符被视为行注释，注释是给开发人员看到，JavaScript引擎会自动忽略。或者多行注释则采用“/*XXXX*/”
++ 以"//"开头直到行末的字符被视为行注释，注释是给开发人员看到，JavaScript引擎会自动忽略。或者多行注释则采用“/\*XXXX\*/”
 + javaScript严格区分大小写
 >>### 数据类型
 + Number:JavaScript不区分整数和浮点数，统一用Number表示。例如1123；0.255；1.235e3；-55；NaN；Infinity；Number可以直接进行四则运算。
@@ -21,4 +21,7 @@
 arr[0]; // 返回索引为0的元素，即1
 arr[5]; // 返回索引为5的元素，即true
 arr[6]; // 索引超出了范围，返回undefined
-
++ 对象:JavaScript的对象是一组由键-值组成的无序集合，var person = {name: 'Bob', age: 20,tags: ['js', 'web', 'mobile'], city: 'Beijing',hasCar: true,zipcode: null};JavaScript对象的键都是字符串类型，值可以是任意数据类。获取则通过类似person.name获取，person.name值为‘Bob’
+>>### 变量
++ 变量的概念基本上和初中代数的方程变量是一致的，只是在计算机程序中，变量不仅可以是数字，还可以是任意数据类型；变量在JavaScript中就是用一个变量名表示，变量名是大小写英文、数字、$和_的组合，且不能用数字开头。变量名也不能是JavaScript的关键字（尽量不要使用中文）
++ strict模式: JavaScript在设计之初，为了方便初学者学习，并不强制要求用var申明变量。这个设计错误带来了严重的后果：如果一个变量没有通过var申明就被使用，那么该变量就自动被申明为全局变量：在JavaScript文件头部书写'use strict';即为启用该模式。在strict模式下运行的JavaScript代码，强制通过var申明变量，未使用var申明变量就使用的，将导致运行错误。
