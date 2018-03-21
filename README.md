@@ -37,13 +37,13 @@ arr[6]; // 索引超出了范围，返回undefined
 + sort-sort()可以对当前Array进行排序，它会直接修改当前Array的元素位置，直接调用时，按照默认顺序排序。会破坏原有数组
 + reverse-将内部元素反转。会破坏原有数组
 + splice-splice()方法是修改Array的“万能方法”，它可以从指定的索引开始删除若干元素，然后再从该位置添加若干元素：
->>>1. var arr = ['Microsoft', 'Apple', 'Yahoo', 'AOL', 'Excite', 'Oracle'];
+>	>>1. var arr = ['Microsoft', 'Apple', 'Yahoo', 'AOL', 'Excite', 'Oracle'];
 // 从索引2开始删除3个元素,然后再添加两个元素:
->>>2. arr.splice(2, 3, 'Google', 'Facebook'); // 返回删除的元素 ['Yahoo', 'AOL', 'Excite']
->>>3. arr; // ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']
+>	>>2. arr.splice(2, 3, 'Google', 'Facebook'); // 返回删除的元素 ['Yahoo', 'AOL', 'Excite']
+>	>>3. arr; // ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']
 // 只删除,不添加:
->>>4. arr.splice(2, 2); // ['Google', 'Facebook']
->>>5. arr; // ['Microsoft', 'Apple', 'Oracle']
+>	>>4. arr.splice(2, 2); // ['Google', 'Facebook']
+>	>>5. arr; // ['Microsoft', 'Apple', 'Oracle']
 // 只添加,不删除:
->>>6. arr.splice(2, 0, 'Google', 'Facebook'); // 返回[],因为没有删除任何元素
->>>7. arr; // ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']
+>	>>6. arr.splice(2, 0, 'Google', 'Facebook'); // 返回[],因为没有删除任何元素
+>	>>7. arr; // ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']
