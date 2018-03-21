@@ -2,7 +2,7 @@
 # [内容参考来源](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/00143449917624134f5c4695b524e81a581ab5a222b05ec000)
 >## 入门
 >>### 快速入门
->>> JavaScript代码可以放在网页的任何地方，或者通过<script>标签的src引用至html中，同一个页面可以引用多个JavaScript文件，按照引用顺序执行JavaScript文件。
++ JavaScript代码可以放在网页的任何地方，或者通过<script>标签的src引用至html中，同一个页面可以引用多个JavaScript文件，按照引用顺序执行JavaScript文件。
 + 编译器:vscode、sublime、notepad++（仅window平台），不推荐使用记事本或者word编写。
 + 浏览器运行JavaScript需要依托与页面
 + 以谷歌浏览器为例，随便打开一个网页，然后点击菜单“查看(View)”-“开发者(Developer)”-“开发者工具(Developer Tools)”。先点击“控制台(Console)“，在这个面板里可以直接输入JavaScript代码，按回车后执行。例如输入console.log(2333);即为控制台输入2333。
@@ -25,3 +25,25 @@ arr[6]; // 索引超出了范围，返回undefined
 >>### 变量
 + 变量的概念基本上和初中代数的方程变量是一致的，只是在计算机程序中，变量不仅可以是数字，还可以是任意数据类型；变量在JavaScript中就是用一个变量名表示，变量名是大小写英文、数字、$和_的组合，且不能用数字开头。变量名也不能是JavaScript的关键字（尽量不要使用中文）
 + strict模式: JavaScript在设计之初，为了方便初学者学习，并不强制要求用var申明变量。这个设计错误带来了严重的后果：如果一个变量没有通过var申明就被使用，那么该变量就自动被申明为全局变量：在JavaScript文件头部书写'use strict';即为启用该模式。在strict模式下运行的JavaScript代码，强制通过var申明变量，未使用var申明变量就使用的，将导致运行错误。
+>>字符串
++ 可以通过+号对多个字符串进行拼接。
++ 可以通过类数组操作获取字符串长度和每个位置的字符。
++ toUpperCase-转换为大写；toLowerCase-转换为小写；indexOf-搜索指定字符串出现的位置；substring-返回指定索引区间的子串
+>>数组
++ indexOf-与String类似，Array也可以通过indexOf()来搜索一个指定的元素的位置
++ slice-对应String的substring()版本，它截取Array的部分元素，然后返回一个新的Array（不会破坏原有数组）。第一个参数为起始索引，第二个参数为结束索引（不包括结束索引），如果没有第二个参数，则默认到最后索引。如果不写任何参数，则完全获取截取，相当与复制
++ push和pop-push()向Array的末尾添加若干元素，pop()则把Array的最后一个元素删除掉。会破坏原有数组。
++ unshift和shift
++ sort-sort()可以对当前Array进行排序，它会直接修改当前Array的元素位置，直接调用时，按照默认顺序排序。会破坏原有数组
++ reverse-将内部元素反转。会破坏原有数组
++ splice-splice()方法是修改Array的“万能方法”，它可以从指定的索引开始删除若干元素，然后再从该位置添加若干元素：
+>>> var arr = ['Microsoft', 'Apple', 'Yahoo', 'AOL', 'Excite', 'Oracle'];
+// 从索引2开始删除3个元素,然后再添加两个元素:
+>>> arr.splice(2, 3, 'Google', 'Facebook'); // 返回删除的元素 ['Yahoo', 'AOL', 'Excite']
+>>> arr; // ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']
+// 只删除,不添加:
+>>> arr.splice(2, 2); // ['Google', 'Facebook']
+>>> arr; // ['Microsoft', 'Apple', 'Oracle']
+// 只添加,不删除:
+>>> arr.splice(2, 0, 'Google', 'Facebook'); // 返回[],因为没有删除任何元素
+>>> arr; // ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']
